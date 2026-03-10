@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>National Level LRU Cache Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="top-bar">
+    <h2>⚡ Advanced In-Memory Cache Engine</h2>
+    <div>
+        <button onclick="toggleTheme()">🌙 Toggle Theme</button>
+        <button onclick="exportCache()">💾 Export JSON</button>
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="card">
+<h3>Benchmark Test</h3>
+<button onclick="runBenchmark()">Run 1000 Operations</button>
+<div id="benchmarkResult"></div>
+</div>
+
+<div class="card">
+<h3>Operation History</h3>
+<div id="history"></div>
+</div>
+
+<div class="card">
+<h3>Eviction Queue</h3>
+<div id="evictions"></div>
+</div>
+
+<div class="card">
+<h3>Import Cache</h3>
+<input type="file" id="importFile">
+<button onclick="importCache()">Import JSON</button>
+</div>
+
+    <div class="card">
+        <h3>Set Capacity</h3>
+        <input type="number" id="capacityInput" placeholder="Capacity">
+        <button onclick="setCapacity()">Apply</button>
+    </div>
+
+    <div class="card">
+        <h3>Operations</h3>
+        <input type="text" id="keyInput" placeholder="Key">
+        <input type="text" id="valueInput" placeholder="Value">
+        <button onclick="putValue()">PUT</button>
+        <button onclick="getValue()">GET</button>
+        <button onclick="deleteKey()">DELETE</button>
+        <button onclick="clearCache()">CLEAR</button>
+    </div>
+
+    <div class="card">
+        <h3>Statistics</h3>
+        <div id="stats"></div>
+    </div>
+
+    <div class="card">
+        <h3>Cache State (MRU → LRU)</h3>
+        <div id="cacheDisplay" class="cache-grid"></div>
+    </div>
+
+    <div class="card">
+        <h3>Cache Usage Graph</h3>
+        <canvas id="cacheChart"></canvas>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
